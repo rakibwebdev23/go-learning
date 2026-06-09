@@ -1,8 +1,8 @@
-package main
+// package main
 
-import "fmt"
+// import "fmt"
 
-func main() {
+// func main() {
     // arr:= [6]string{"This", "is", "a", "Go", "interview", "question"}
     // fmt.Println(arr)
 
@@ -19,9 +19,25 @@ func main() {
 
 	// slice make function 
 
-	arr:= make([]int,3, 10) //3 is the length of the slice, 10 is the capacity
-	fmt.Println(arr)
+// 	arr:= make([]int,3, 10) //3 is the length of the slice, 10 is the capacity
+// 	fmt.Println(arr)
 
+// }
+
+
+// slice veriatic function 
+package main
+
+import "fmt"
+
+func sum(nums ...int) {
+	fmt.Println(nums)
+	fmt.Println(len(nums))
+	fmt.Println(cap(nums))
+}
+
+func main() {
+	sum(1, 2, 5, 6, 9)
 }
 
 
