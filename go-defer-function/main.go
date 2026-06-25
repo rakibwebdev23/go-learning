@@ -3,20 +3,44 @@ package main
 import "fmt"
 
 func calculate() (result int) {
-	fmt.Println("first print", result)
+	fmt.Println("calculate first output", result)
 
-	defer func() {
-		result = result + 10
-		fmt.Println("second print", result)
-	}()
+	sum := func ()  {
+		result = result + 30;
+		fmt.Println("calculate second output", result);
+	}
 
-	result = 5
-	return
+	defer sum()
+
+	result = 10;
+	fmt.Println("calculate third output", result);
+
+	return result;
+}
+
+func calc () int{
+	result := 0;
+	fmt.Println("first output");
+
+	show := func ()  {
+		result = result + 20;
+		fmt.Println("second output", result);
+	}
+
+	defer show()
+
+	result = 5;
+	fmt.Println("third output", result)
+
+	return result;
 }
 
 func main() {
-	res := calculate()
-	fmt.Println("final result:", res)
+    a := calculate()
+	fmt.Println("final result:", a)
+
+	b := calc()
+	fmt.Println("final result",b);
 }
 
 
